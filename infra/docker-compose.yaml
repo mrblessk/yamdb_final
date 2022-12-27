@@ -9,8 +9,6 @@ services:
       - ./.env
   web:
     image: mrblessk/yamdb_final:latest
-    secrets:
-      - docker_name
 
     build: ../api_yamdb
     restart: always
