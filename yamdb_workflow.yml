@@ -50,7 +50,6 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/infra_actions:latest
-          file: api_yamdb/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
