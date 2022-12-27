@@ -58,15 +58,16 @@ jobs:
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
-          context: .
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
+          stack_file_name: docker-compose.yaml
           script: |
+            pwd
             ls
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final:latest
-            */yamdb_final/infra
+            pwd
             ls
             sudo docker-compose stop
             sudo docker-compose rm web
