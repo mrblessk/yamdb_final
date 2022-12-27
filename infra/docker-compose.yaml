@@ -2,11 +2,8 @@ version: '3.8'
 
 secrets:
   docker_name:
-    external: true
-  project_name:
-    external: true
-  tag:
-    external: true
+    file: ./docker_access.txt
+
 
 services:
   db:
@@ -16,11 +13,10 @@ services:
     env_file:
       - ./.env
   web:
-    image: docker_name/project_name:tag
+    image: mrblessk/yamdb_final:latest
     secrets:
       - docker_name
-      - project_name
-      - tag
+
     build: ../api_yamdb
     restart: always
     volumes:
