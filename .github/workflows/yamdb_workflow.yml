@@ -48,7 +48,7 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_final:latest
-          file: infra/docker-compose.yaml
+          file: api_yamdb/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
