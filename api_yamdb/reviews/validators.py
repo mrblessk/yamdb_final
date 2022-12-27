@@ -4,8 +4,8 @@ from django.core.exceptions import ValidationError
 
 
 def validate_username(value):
-    FORBIDDEN_USERNAME = ['me', 'ME', 'Me', 'mE']
-    for name in FORBIDDEN_USERNAME:
+    forbidden_username = ['me', 'ME', 'Me', 'mE']
+    for name in forbidden_username:
         if value == name:
             raise ValidationError(f'Имя {value} использовать нельзя')
     return value
