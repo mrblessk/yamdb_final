@@ -1,4 +1,5 @@
-# API_YAMDB ![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+# API_YAMDB 
+[![yamdb_workflow](https://github.com/mrblessk/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)](https://github.com/mrblessk/yamdb_final/actions/workflows/yamdb_workflow.yml)
 
 
 ### Описание
