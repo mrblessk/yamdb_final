@@ -1,5 +1,4 @@
 from django_filters import rest_framework as rf
-
 from reviews.models import Title
 
 

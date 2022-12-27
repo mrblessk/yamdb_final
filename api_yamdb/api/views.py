@@ -5,6 +5,7 @@ from rest_framework import filters, permissions, status, views
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
+from reviews.models import Category, Comment, Genre, Review, Title, User
 
 from .filters import TitleFilter
 from .mixins import (CreateDestroyListViewSet,
@@ -13,10 +14,9 @@ from .permissions import (IsAdmin, IsAdminOrReadOnly,
                           IsAuthorModeratorAdminOrReadOnly)
 from .serializers import (CategorySerializer, CommentSerializers,
                           GenreSerializer, GetTokenSerializer,
-                          ReviewSerializers, SignUpSerializer,
-                          TitleCrudSerializer, TitleGetSerializer,
-                          UserSerializer, ProfilePatchSerializer)
-from reviews.models import Category, Comment, Genre, Review, Title, User
+                          ProfilePatchSerializer, ReviewSerializers,
+                          SignUpSerializer, TitleCrudSerializer,
+                          TitleGetSerializer, UserSerializer)
 
 
 class TitleViewSet(CreateDestroyUpdateDeleteListViewSet):
