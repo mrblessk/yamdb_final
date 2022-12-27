@@ -73,9 +73,8 @@ jobs:
             echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
             echo DB_HOST=${{ secrets.DB_HOST }} >> .env
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
-            sudo printf "docker_access" | docker secret create docker_name ${{ secrets.DOCKER_USERNAME }}
-            sudo printf "docker_access" | docker secret create docker_name yamdb_final
-            sudo printf "docker_access" | docker secret create docker_name latest
+            echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
+            echo ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }} >> .env
             sudo docker-compose up -d
 
   send_message:
