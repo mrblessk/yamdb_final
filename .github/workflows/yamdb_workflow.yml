@@ -63,11 +63,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-<<<<<<< Updated upstream
-            cd infra/
-=======
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final:latest
->>>>>>> Stashed changes
             sudo docker-compose stop
             sudo docker-compose rm web
             sudo touch env.
