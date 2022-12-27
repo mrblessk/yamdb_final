@@ -21,7 +21,7 @@ jobs:
 
     - name: Test with flake8 and django tests
       run: |
-        flake8 api/ api_yamdb/ --exclude api/migrations/,api_yamdb/settings.py
+        flake8 .
 
     - name: Tests with Pytest
       run: |
