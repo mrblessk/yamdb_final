@@ -64,11 +64,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           stack_file_name: docker-compose.yaml
           script: |
-            pwd
-            ls
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final:latest
-            pwd
-            ls
             sudo docker-compose stop
             sudo docker-compose rm web
 
