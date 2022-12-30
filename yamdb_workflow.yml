@@ -1,6 +1,9 @@
 name: yamdb_workflow
 
-on: [push]
+
+on:
+  push:
+    branches: [ master ]
 
 jobs:
   tests:
@@ -58,16 +61,13 @@ jobs:
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
-          context: .
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-            ls
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb_final:latest
             cd ./infra/
-            ls
             sudo docker-compose stop
             sudo docker-compose rm web
 
